@@ -7,11 +7,11 @@ using System.Text;
 
 namespace PIZZERIA.APP.Controllers
 {
-    public class PizzeriaClient : Controller
+    public class PizzeriaClientController : Controller
     {
         private readonly HttpClient _httpClient;
 
-        public PizzeriaClient(HttpClient httpClientFactory)
+        public PizzeriaClientController(HttpClient httpClientFactory)
         {
             _httpClient = httpClientFactory;
             _httpClient.BaseAddress = new Uri("https://localhost:7188/api");
