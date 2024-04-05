@@ -16,6 +16,8 @@ namespace PIZZERIA.API.Models.Interfaces
         Response<bool> EditPedido(Pizza pizza, int pedidoId);
         Response<bool> CancelPedido(int pedidoId);
 
+        List<Ingrediente> IngredientesByPizza(int pizza);
+
         Task<Response<Pedido>> ConsultarPedido(int pedidoId);
 
     }

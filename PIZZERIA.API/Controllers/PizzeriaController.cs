@@ -53,7 +53,7 @@ namespace PIZZERIA.API.Controllers
 
         //Endpoint para editar un pedido
         [HttpPut("EditPedido")]
-        public IActionResult EditPedido([FromBody] Pizza pizza, int pedidoId)
+        public IActionResult EditPedido(int pedidoId, Pizza pizza)
         {
             
             return Ok(repo.EditPedido(pizza, pedidoId));
@@ -71,6 +71,13 @@ namespace PIZZERIA.API.Controllers
         public IActionResult ConsultarPedido(int pedidoId)
         {
             var response = repo.ConsultarPedido(pedidoId).Result;
+            return Ok(response.Data);
+        }
+
+        [HttpGet("IngredientesByPizza")]
+        public IActionResult IngredientesByPizza(int pizzaId)
+        {
+            var response = repo.IngredientesByPizza(pizzaId);
             return Ok(response);
         }
     }

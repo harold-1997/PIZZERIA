@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="row justify-content-center">
+
+    <div class="col-10">
+
+        <div class="alert alert-info" role="alert">
+            PIZZERIA BAMBINO
+        </div>
+        <a href="@Url.Action("Index","PizzeriaClient")" type="button" class="btn btn-primary btn-sm boton-nuevo-empleado">Volver</a>
+
+        <table class="table table-striped" id="tablaIngredientes">
+            <thead>
+                <tr>
+                    <th>Denominacion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/index.js"></script>
+}

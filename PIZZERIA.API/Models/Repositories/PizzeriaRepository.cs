@@ -165,5 +165,16 @@ namespace PIZZERIA.API.Models.Repositories
             
             return response;
         }
+
+        public List<Ingrediente> IngredientesByPizza(int pizza)
+        {
+            List<Ingrediente> ingredientes = new List<Ingrediente>();
+            var ing = context.Pizza.Pizzas.Find(p => p.PizzaId == pizza)!.Ingredientes;
+            if(ing is not null)
+            {
+                ingredientes = ing;
+            }
+            return ingredientes;
+        }
     }
 }
